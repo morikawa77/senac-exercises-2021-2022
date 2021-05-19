@@ -72,7 +72,7 @@ namespace Lista13052021
 
 			areaR = baseR * alturaR;
 
-			Console.WriteLine("A área do retânagulo é de {0} metros.", areaR);
+			Console.WriteLine($"A área do retânagulo é de {areaR} metros.");
 			Console.ReadLine();
         }
 
@@ -98,7 +98,7 @@ namespace Lista13052021
 			difAnos = anoAtual - anoCasamento;
 			idadeCasamento = idadeAtual - difAnos;
 
-			Console.Write("{0}, você tinha {1} quando se casou em {2}", nome, idadeCasamento, anoCasamento);
+			Console.Write($"{nome}, você tinha {idadeCasamento} quando se casou em {anoCasamento}");
 			Console.ReadLine();
         }
 
@@ -115,7 +115,7 @@ namespace Lista13052021
             circ = 2 * Math.PI * raio;
             area = Math.PI * Math.Pow(raio, 2);
 
-			Console.Write("A área do Círculo é {0}, e sua circunferência é {1}", area, circ);
+			Console.Write($"A área do Círculo é {area}, e sua circunferência é {circ}");
 			Console.ReadLine();
         }
 
@@ -134,7 +134,7 @@ namespace Lista13052021
 
             areaT = 0.5 * (baseT * altT);
 
-			Console.Write("A área do triângulo é {0}", areaT);
+			Console.Write($"A área do triângulo é {areaT}");
 			Console.ReadLine();
         }
 
@@ -157,7 +157,7 @@ namespace Lista13052021
             hipoT = baseT + altT;
             hipoT = Math.Sqrt(hipoT);
 
-			Console.Write("A hipotenusa do triângulo é {0}", hipoT);
+			Console.Write($"A hipotenusa do triângulo é {hipoT}");
 			Console.ReadLine();
         }
 
@@ -185,14 +185,14 @@ namespace Lista13052021
                 salarioExtra = salarioHoraExtra * horasExtras;
                 salarioTotal = salarioBase + salarioExtra;
 
-				Console.Write("O valor total do salário é {0}", salarioTotal );
+				Console.Write($"O valor total do salário é {salarioTotal}");
 				Console.ReadLine();
             }
             else
             {
                 salarioTotal = salarioBase;
 
-				Console.Write("O valor total do salário é {0}", salarioTotal);
+				Console.Write($"O valor total do salário é {salarioTotal}");
 				Console.ReadLine();
             }
         }
@@ -214,7 +214,7 @@ namespace Lista13052021
             impostos = Math.Round(custoFabrica * indImposto, 2);
             custoFinal = custoFabrica + impostos + lucro;
             
-            Console.Write("O custo final do carro é {0}", custoFinal);
+            Console.Write($"O custo final do carro é {custoFinal}");
 			Console.ReadLine();
         }
     }
