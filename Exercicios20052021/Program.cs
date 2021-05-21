@@ -132,7 +132,7 @@ namespace Exercicios20052021
             }
         }
         static void exercicio05() {
-            for (int j = 0; j <= 10; j=j+2)
+            for (int j = 0; j <= 10; j+=2)
             {
                 Console.WriteLine($"O valor de j é {j}");
             }
