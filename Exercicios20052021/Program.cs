@@ -41,6 +41,15 @@ namespace Exercicios20052021
                 case 5:
                     exercicio05();
                     break;
+                case 6:
+                    exercicio06();
+                    break;
+                case 7:
+                    exercicio07();
+                    break;
+                case 8:
+                    exercicio08();
+                    break;
                 default:
                     Console.WriteLine("Exercício inválido!");
                     break;
@@ -135,6 +144,36 @@ namespace Exercicios20052021
             for (int j = 0; j <= 10; j+=2)
             {
                 Console.WriteLine($"O valor de j é {j}");
+            }
+        }
+
+        static void exercicio06() {
+            string[] letras = new string[5] {"a","b","c","d","e"};
+
+            foreach (var item in letras)
+            {
+                Console.WriteLine($"O valor do item é {item}");
+            }
+        }
+
+        static void exercicio07() {
+            int y;
+            
+            Console.WriteLine("Digite um número:");
+            y = Int32.Parse(Console.ReadLine());
+
+            do {
+                Console.WriteLine($"O valor de y é {y}");
+                y--;
+            } while (y > 0);
+        }
+
+        static void exercicio08() {
+            int mes = 0;
+
+            while (!(mes > 0 && mes < 13)) {
+                Console.WriteLine("Digite o seu mês de aniversário:");
+                mes = Convert.ToInt32(Console.ReadLine());
             }
         }
     }
