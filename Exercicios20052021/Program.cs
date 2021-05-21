@@ -35,6 +35,12 @@ namespace Exercicios20052021
                 case 3:
                     exercicio03();
                     break;
+                case 4:
+                    exercicio04();
+                    break;
+                case 5:
+                    exercicio05();
+                    break;
                 default:
                     Console.WriteLine("Exercício inválido!");
                     break;
@@ -116,6 +122,19 @@ namespace Exercicios20052021
                 default:
                     Console.WriteLine("Você selecionou uma opção inválida");
                     break;
+            }
+        }
+
+        static void exercicio04() {
+            for (int x = 1; x <= 10; x++)
+            {
+                Console.WriteLine($"O valor de x é {x}");
+            }
+        }
+        static void exercicio05() {
+            for (int j = 0; j <= 10; j=j+2)
+            {
+                Console.WriteLine($"O valor de j é {j}");
             }
         }
     }
