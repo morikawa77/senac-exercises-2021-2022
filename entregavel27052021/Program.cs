@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace entregavel27052021
 {
@@ -61,16 +61,20 @@ namespace entregavel27052021
 
         // Escreva um programa C# para determinar se um dado número é primo ou não.
         static void exercicio03() {
-            int a = int.Parse(Console.ReadLine());
+            Console.Write("Digite um número: ");
+            int n = int.Parse(Console.ReadLine());
 
+            if (chkprime(n))
+                Console.WriteLine(n + " é um número primo");
+            else
+                Console.WriteLine(n + " não é um número primo");
 
-
-            for(int x = 1; x <= a; x++) {
-
-                for(int y = 1; y <= x; y++){
-                    Console.Write("*");
-                } 
-                    Console.WriteLine();
+            bool chkprime(int num)
+            {
+                for (int i = 2; i < num; i++)
+                    if (num % i == 0)
+                        return false;
+                return true;
             }
         }
 
