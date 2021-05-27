@@ -1,0 +1,10 @@
+[
+  {
+    "method": "exercicio01",
+    "description": "Digite x, leia bla bla bla e some."
+  },
+  {
+    "method": "sair",
+    "description": "Sair"
+  }
+]
