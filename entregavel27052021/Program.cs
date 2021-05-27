@@ -29,7 +29,7 @@ namespace entregavel27052021
             Console.ResetColor();
 
             Console.WriteLine("3 - Escreva um programa C# para determinar se um dado número é primo ou não");
-            Console.WriteLine("10. Escreva um programa em C# para fazer um padrão como uma pirâmide");
+            Console.WriteLine("10 - Escreva um programa em C# para fazer um padrão como uma pirâmide");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("0 - Sair");
             Console.ResetColor();
