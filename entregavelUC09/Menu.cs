@@ -541,8 +541,125 @@ namespace EntregavelUC09
 
     }
 
+    public void exercicio24(){
+      int num1, num2;
+
+      Console.WriteLine("Digite o primeiro número:");
+      num1 = Convert.ToInt32(Console.ReadLine());
+
+      Console.WriteLine("Digite o segundo número:");
+      num2 = Convert.ToInt32(Console.ReadLine());
+
+      if (num1==num2) {
+          Console.WriteLine("Os números são iguais.");
+      } 
+      else if (num1>num2) {
+          Console.WriteLine($"O primeiro número ({num1}) é maior que o segundo número.");
+      } else {
+          Console.WriteLine($"O segundo número ({num2}) é maior que o primeiro número.");
+      }
+    }
+
+    public void exercicio25(){
+      int mes;
+
+      Console.WriteLine("Digite o número do seu mês de nascimento:");
+      mes = Int32.Parse(Console.ReadLine());
+
+      switch (mes) {
+          case 1:
+              Console.WriteLine("Você nasceu em Janeiro");
+              break;
+          case 2:
+              Console.WriteLine("Você nasceu em Fevereiro");
+              break;    
+          default:
+              Console.WriteLine("Mês inválido.");
+              break;
+          }
+    }
+
+    public void exercicio26() {
+      int opcao;
+
+      Console.WriteLine("Menu");
+      Console.WriteLine("1 - Cadastros");
+      Console.WriteLine("2 - Vendas");
+      Console.WriteLine("3 - Compras");
+      Console.WriteLine("4 - Relatórios");
+      Console.WriteLine("5 - Sair");
+
+      Console.WriteLine("Digite o número da opção desejada:");
+      opcao = Int32.Parse(Console.ReadLine());
+
+      switch (opcao)
+      {
+          case 1:
+              Console.WriteLine("Você selecionou a opção 1 - Cadastros");
+              break;
+          case 2:
+              Console.WriteLine("Você selecionou a opção 2 - Vendas");
+              break;
+          case 3:
+              Console.WriteLine("Você selecionou a opção 3 - Compras");
+              break;
+          case 4:
+              Console.WriteLine("Você selecionou a opção 4 - Relatórios");
+              break;
+          case 5:
+              Console.WriteLine("Você selecionou a opção 5 - Sair");
+              break;
+          default:
+              Console.WriteLine("Você selecionou uma opção inválida");
+              break;
+      }
+    }
+
+    public void exercicio27() {
+      for (int x = 1; x <= 10; x++)
+      {
+          Console.WriteLine($"O valor de x é {x}");
+      }
+    }
+    public void exercicio28() {
+      for (int j = 0; j <= 10; j+=2)
+      {
+          Console.WriteLine($"O valor de j é {j}");
+      }
+    }
+
+    public void exercicio29() {
+      string[] letras = new string[5] {"a","b","c","d","e"};
+
+      foreach (var item in letras)
+      {
+          Console.WriteLine($"O valor do item é {item}");
+      }
+    }
+
+    public void exercicio30() {
+      int y;
+      
+      Console.WriteLine("Digite um número:");
+      y = Int32.Parse(Console.ReadLine());
+
+      do {
+          Console.WriteLine($"O valor de y é {y}");
+          y--;
+      } while (y > 0);
+    }
+
+    public void exercicio31() {
+      int mes = 0;
+
+      while (!(mes > 0 && mes < 13)) {
+          Console.WriteLine("Digite o seu mês de aniversário:");
+          mes = Convert.ToInt32(Console.ReadLine());
+      }
+    }
+
     // Escreva um programa em C# para exibir uma sequência de números na ordem inversa.
-    public void exercicio24()
+    public void exercicio32()
     {
       string sequencia;
 
@@ -557,7 +674,7 @@ namespace EntregavelUC09
 
 
     // Escreva um programa C# para encontrar os números perfeitos dentro de um determinado intervalo de número.
-    public void exercicio25()
+    public void exercicio33()
     {
       int inicial, final, value;
       List<int> perfects = new List<int>();
@@ -594,7 +711,7 @@ namespace EntregavelUC09
 
 
     // Escreva um programa C# para determinar se um dado número é primo ou não.
-    public void exercicio26()
+    public void exercicio34()
     {
       Console.Write("Digite um número: ");
       int n = int.Parse(Console.ReadLine());
@@ -615,7 +732,7 @@ namespace EntregavelUC09
 
     // Uma pessoa só pode votar em eleições brasileiras se ela for maior que 16 anos e for cidadã brasileira.
     // Crie um programa com duas variáveis, int idade, bool brasileira, e faça com que o programa diga se a pessao está apta a votar ou não, de acordo com os dados nas variáveis.
-    public void exercicio27()
+    public void exercicio35()
     {
       int idade;
       bool brasileira;
@@ -647,7 +764,7 @@ namespace EntregavelUC09
 
 
     // Faça um programa em C# que imprima todos os múltiplos de 3, entre 1 e 100.
-    public void exercicio28()
+    public void exercicio36()
     {
       for (int i = 1; i * 3 < 101; i++)
       {
@@ -656,7 +773,7 @@ namespace EntregavelUC09
     }
 
     // Escreva um programa em C# que imprime todos os números que são divisíveis por 3 ou por 4 entre 0 e 30.
-    public void exercicio29()
+    public void exercicio37()
     {
       for (int i = 0; i < 31; i++)
       {
@@ -669,7 +786,7 @@ namespace EntregavelUC09
 
     // Crie um programa em C# que imprima os fatoriais de 1 a 10.
     // O fatorial de um número n é n n-1 n-2 ... até n = 1.
-    public void exercicio30()
+    public void exercicio38()
     {
       int fatorial = 1;
       
@@ -685,7 +802,7 @@ namespace EntregavelUC09
     //Faça um programa em C# que imprima os primeiros números da série de Fibonacci até passar de 100
     // A série de Fibonacci é a seguinte: 0, 1, 1, 2, 3, 5, 8, 13, 21 etc..
     // Para calculá-la, o primeiro elemento vale 0, o segundo vale 1, daí por diante, o n-ésimo elemento vale o(n-1)-ésimo elemento somado ao(n-2)- ésimo elemento(ex: 8 = 5 + 3).
-    public void exercicio31()
+    public void exercicio39()
     {
       int a = 0, fib = 1;
 
@@ -706,7 +823,7 @@ namespace EntregavelUC09
     // 3 6 9
     // 4 8 12 16
     // n n*2 n*3 .... n* n
-    public void exercicio32()
+    public void exercicio40()
     {
       int linhas;
 
@@ -730,7 +847,7 @@ namespace EntregavelUC09
     //    * *
     //   * * *
     //  * * * *
-    public void exercicio33()
+    public void exercicio41()
     {
       int num, i, j, k;
       Console.Write("Digite o número de linhas: ");
