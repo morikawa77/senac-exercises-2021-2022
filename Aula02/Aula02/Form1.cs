@@ -36,5 +36,10 @@ namespace Aula02
         {
 
         }
+
+        private void frmPrincipal_Shown(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

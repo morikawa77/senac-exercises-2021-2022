@@ -119,6 +119,7 @@ namespace Aula02
             this.Name = "frmPrincipal";
             this.Text = "Formulario Principal";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
+            this.Shown += new System.EventHandler(this.frmPrincipal_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
