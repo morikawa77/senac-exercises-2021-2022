@@ -103,7 +103,6 @@ namespace Aula02
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Clone:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmPrincipal
             // 
@@ -118,7 +117,6 @@ namespace Aula02
             this.Controls.Add(this.txtNome);
             this.Name = "frmPrincipal";
             this.Text = "Formulario Principal";
-            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.Shown += new System.EventHandler(this.frmPrincipal_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();

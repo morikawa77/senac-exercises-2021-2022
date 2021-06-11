@@ -17,11 +17,6 @@ namespace Aula02
             InitializeComponent();
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             txtNomeOK.Text = txtNome.Text;
@@ -30,11 +25,6 @@ namespace Aula02
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void frmPrincipal_Shown(object sender, EventArgs e)
