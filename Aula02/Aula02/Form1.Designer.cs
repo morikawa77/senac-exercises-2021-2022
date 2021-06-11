@@ -53,12 +53,12 @@ namespace Aula02
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.Image")));
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmar.Location = new System.Drawing.Point(266, 317);
+            this.btnConfirmar.Location = new System.Drawing.Point(47, 314);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnConfirmar.Size = new System.Drawing.Size(159, 43);
-            this.btnConfirmar.TabIndex = 1;
-            this.btnConfirmar.Text = "OK";
+            this.btnConfirmar.TabIndex = 2;
+            this.btnConfirmar.Text = "CLONAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -76,7 +76,7 @@ namespace Aula02
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSair.Location = new System.Drawing.Point(47, 317);
+            this.btnSair.Location = new System.Drawing.Point(280, 314);
             this.btnSair.Name = "btnSair";
             this.btnSair.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnSair.Size = new System.Drawing.Size(145, 43);
@@ -93,16 +93,17 @@ namespace Aula02
             this.txtNomeOK.Multiline = true;
             this.txtNomeOK.Name = "txtNomeOK";
             this.txtNomeOK.Size = new System.Drawing.Size(378, 48);
-            this.txtNomeOK.TabIndex = 4;
+            this.txtNomeOK.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(44, 168);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Nome OK:";
+            this.label1.Text = "Clone:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmPrincipal
             // 
