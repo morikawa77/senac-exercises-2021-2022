@@ -10,16 +10,24 @@ using System.Windows.Forms;
 
 namespace Aula02
 {
-    public partial class frmPrincipal : Form
+    public partial class frmCadastro : Form
     {
-        public frmPrincipal()
+
+        List<Person> persons = new List<Person>();
+
+        public frmCadastro()
         {
             InitializeComponent();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            txtNomeOK.Text = txtNome.Text;
+            persons.Add(new Person() { Name = txtNome.Text, Surname = txtSobrenome.Text, birthDate = dtpDataNascimento.Value, Telefone = mtxtTelefone.Text});
+            dgvPessoas.DataSource = null;
+            dgvPessoas.DataSource = persons;
+            dvgPessoasHeaders();
+            clearFields();
+            txtNome.Focus();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -27,9 +35,42 @@ namespace Aula02
             Application.Exit();
         }
 
-        private void frmPrincipal_Shown(object sender, EventArgs e)
+        private void frmCadastro_Shown(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
         }
+
+        public void frmCadastro_Load(object sender, EventArgs e)
+        {
+            dgvPessoas.DataSource = persons;
+            dvgPessoasHeaders();
+
+        }
+
+        public void dvgPessoasHeaders()
+        {
+            dgvPessoas.Columns[0].HeaderText = "Nome";
+            dgvPessoas.Columns[1].HeaderText = "Sobrenome";
+            dgvPessoas.Columns[2].HeaderText = "Data de Nascimento";
+            dgvPessoas.Columns[3].HeaderText = "Celular";
+        }
+
+        public void clearFields()
+        {
+            txtNome.Text = "";
+            txtSobrenome.Text = "";
+            dtpDataNascimento.Value = DateTime.Today;
+            mtxtTelefone.Text = "";
+        }
+    }
+
+    class Person
+    {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+
+        public DateTime birthDate { get; set; }
+
+        public string Telefone { get; set; }
     }
 }
