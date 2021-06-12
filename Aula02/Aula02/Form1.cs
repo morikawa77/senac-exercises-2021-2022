@@ -14,6 +14,7 @@ namespace Aula02
     {
 
         List<Person> persons = new List<Person>();
+        moduleExcel excelImp = new moduleExcel();
 
         public frmCadastro()
         {
@@ -37,7 +38,7 @@ namespace Aula02
 
         private void frmCadastro_Shown(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            // this.WindowState = FormWindowState.Maximized;
         }
 
         public void frmCadastro_Load(object sender, EventArgs e)
@@ -61,6 +62,18 @@ namespace Aula02
             txtSobrenome.Text = "";
             dtpDataNascimento.Value = DateTime.Today;
             mtxtTelefone.Text = "";
+        }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Documents (*.xls)|*.xls";
+            sfd.FileName = "Cadastro.xls";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                excelImp.ToCsV(dgvPessoas, sfd.FileName);
+                MessageBox.Show("Arquivo Exportado");
+            }
         }
     }
 

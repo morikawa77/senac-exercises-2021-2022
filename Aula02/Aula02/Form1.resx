@@ -145,6 +145,18 @@
   <metadata name="dgvPessoas.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="btnExportToExcel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFdSURBVDhPY6Aa4CmyDOUpsviPDSvXe/wXLLXphCrFDvAZEDg74//0IzP+C5bZdkGVYwJCBtx5
+        ewK/IfgMsOyNAGsGYZBh3MWW7lBtCIBsgHil4//YhVX/xSocwPzweWX/Feo8kAy1DIVqQwB0Fxy8feZ/
+        zeYp/0PmFP+/+vwuKBBJM8CiO+b/q8/v/l8DanaelIqkmUgD+Eus/t96+fD//TdPwGxkOaIMKFvf/3/z
+        5YP/11/c+79iwwSwmFC51X+5Rtv/0g22GVBtCIBsgGaz//8P3z7/N+2K+m/QHvb/4/fP/7VbgsCaXRpC
+        /tunxtxyiU6xgGqFAHQXYMNgAwqj/rtGpQBxMqo3CBngMsvzv0tnwH+XzFiwAS5RyX1A2guqnbABmp0O
+        /12KYLaD8T+36JRwqHbCBvAWWf43nujy3yUlHmyAe3TKFKhW0oBTeJqya3TKstDQUGYGBgYGAE3iPc3D
+        UtBnAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA

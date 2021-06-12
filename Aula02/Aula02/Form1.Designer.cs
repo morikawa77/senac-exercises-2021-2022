@@ -42,6 +42,7 @@ namespace Aula02
             this.mtxtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.dgvPessoas = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnExportToExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,9 +72,10 @@ namespace Aula02
             // lbl_Descricao
             // 
             this.lbl_Descricao.AutoSize = true;
+            this.lbl_Descricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbl_Descricao.Location = new System.Drawing.Point(44, 39);
             this.lbl_Descricao.Name = "lbl_Descricao";
-            this.lbl_Descricao.Size = new System.Drawing.Size(38, 13);
+            this.lbl_Descricao.Size = new System.Drawing.Size(72, 24);
             this.lbl_Descricao.TabIndex = 2;
             this.lbl_Descricao.Text = "Nome:";
             // 
@@ -94,10 +96,11 @@ namespace Aula02
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(44, 130);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.Size = new System.Drawing.Size(125, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Sobrenome:";
             // 
@@ -112,9 +115,10 @@ namespace Aula02
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(47, 220);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.Size = new System.Drawing.Size(203, 24);
             this.label2.TabIndex = 6;
             this.label2.Text = "Data de Nascimento:";
             // 
@@ -131,9 +135,10 @@ namespace Aula02
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lblTelefone.Location = new System.Drawing.Point(47, 305);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(42, 13);
+            this.lblTelefone.Size = new System.Drawing.Size(82, 24);
             this.lblTelefone.TabIndex = 8;
             this.lblTelefone.Text = "Celular:";
             // 
@@ -152,6 +157,7 @@ namespace Aula02
             this.dgvPessoas.AllowUserToDeleteRows = false;
             this.dgvPessoas.AllowUserToResizeColumns = false;
             this.dgvPessoas.AllowUserToResizeRows = false;
+            this.dgvPessoas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPessoas.Location = new System.Drawing.Point(502, 64);
             this.dgvPessoas.MultiSelect = false;
@@ -165,17 +171,33 @@ namespace Aula02
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(502, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.Size = new System.Drawing.Size(102, 24);
             this.label3.TabIndex = 11;
             this.label3.Text = "Cadastros";
+            // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.btnExportToExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExportToExcel.Image")));
+            this.btnExportToExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportToExcel.Location = new System.Drawing.Point(47, 497);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnExportToExcel.Size = new System.Drawing.Size(378, 51);
+            this.btnExportToExcel.TabIndex = 12;
+            this.btnExportToExcel.Text = "Exportar para Excel";
+            this.btnExportToExcel.UseVisualStyleBackColor = true;
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1377, 648);
+            this.Controls.Add(this.btnExportToExcel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvPessoas);
             this.Controls.Add(this.mtxtTelefone);
@@ -213,6 +235,7 @@ namespace Aula02
         private System.Windows.Forms.MaskedTextBox mtxtTelefone;
         private System.Windows.Forms.DataGridView dgvPessoas;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnExportToExcel;
     }
 }
 
