@@ -21,7 +21,7 @@ namespace ProjetoUC10
         {
             InitializeComponent();
 
-            // this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;
 
             dgvPersons.DataSource = person.GetPersons();
 
@@ -33,7 +33,8 @@ namespace ProjetoUC10
             person.name = txtName.Text;
             person.address = txtAddress.Text;
             person.number = Convert.ToDouble(txtNumber.Text);
-            person.telephone = Convert.ToDouble(txtTelephone.Text);
+            Regex regexObj = new Regex(@"[^\d]");
+            person.telephone = Convert.ToDouble(regexObj.Replace(txtTelephone.Text, ""));
             person.city = txtCity.Text;
             person.state = txtState.Text;
 
