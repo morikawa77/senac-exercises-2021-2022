@@ -4,13 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadastro.UI", "ProjetoUC10\Cadastro.UI.csproj", "{C2C18471-DB26-402C-B445-9CDA8D8AEDB2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5641B43C-EBA6-48C3-BB5D-8BD29927D8E6} = {5641B43C-EBA6-48C3-BB5D-8BD29927D8E6}
-	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadastro.MODEL", "Cadastro.MODEL\Cadastro.MODEL.csproj", "{75374575-0CCB-409E-B136-3DDA58BD02ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadastro.MODEL", "Cadastro.MODEL\Cadastro.MODEL.csproj", "{75374575-0CCB-409E-B136-3DDA58BD02ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadastro.DAL", "Cadastro.DAL\Cadastro.DAL.csproj", "{5641B43C-EBA6-48C3-BB5D-8BD29927D8E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadastro.DAL", "Cadastro.DAL\Cadastro.DAL.csproj", "{5641B43C-EBA6-48C3-BB5D-8BD29927D8E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

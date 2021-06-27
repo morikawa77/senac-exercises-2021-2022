@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>persons.ico</ApplicationIcon>
+    <Authors>Reginaldo Morikawa</Authors>
+    <Company>Wolf + Partners</Company>
+    <PackageIcon>persons.png</PackageIcon>
+    <PackageIconUrl />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\persons.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cadastro.DAL\Cadastro.DAL.csproj" />
+    <ProjectReference Include="..\Cadastro.MODEL\Cadastro.MODEL.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -9,11 +9,16 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cadastro.DAL;
+using Cadastro.MODEL;
+using PersonDAL = Cadastro.DAL.PersonDAL;
 
 namespace ProjetoUC10
 {
     public partial class frmPessoas : Form
     {
+        PersonDAL personDAL = new PersonDAL();
+
         Person person = new Person();
 
 
@@ -23,80 +28,177 @@ namespace ProjetoUC10
 
             this.WindowState = FormWindowState.Maximized;
 
-            dgvPersons.DataSource = person.GetPersons();
+            dgvPersons.DataSource = personDAL.GetPersons();
 
             SetHeadersNames();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            person.name = txtName.Text;
-            person.address = txtAddress.Text;
-            person.number = Convert.ToDouble(txtNumber.Text);
-            Regex regexObj = new Regex(@"[^\d]");
-            person.telephone = Convert.ToDouble(regexObj.Replace(txtTelephone.Text, ""));
-            person.city = txtCity.Text;
-            person.state = txtState.Text;
-
-            var success = person.InsertPerson(person);
-
-            dgvPersons.DataSource = person.GetPersons();
-
-            SetHeadersNames();
-
-            if (success)
+            if (txtPersonId.Text !="")
             {
-                ClearControls();
-                MessageBox.Show("Pessoa adicionada com sucesso.");
+                MessageBox.Show(
+                    "Você está tentando adicionar um pessoa que já existe. Ao invés disso tente atualizar, apagar ou ainda, limpar os campos para inserir uma nova pessoa.",
+                    "Atenção", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Warning
+                );
+            } else
+            {
+                if (verifyFields())
+                {
+                    MessageBox.Show(
+                        "Preencha os campos corretamente",
+                        "Atenção",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                }
+                else
+                {
+                    person.name = txtName.Text;
+                    person.address = txtAddress.Text;
+                    person.number = Convert.ToDouble(txtNumber.Text);
+                    Regex regexObj = new Regex(@"[^\d]");
+                    person.telephone = Convert.ToDouble(regexObj.Replace(txtTelephone.Text, ""));
+                    person.city = txtCity.Text;
+                    person.state = txtState.Text;
+
+                    var success = personDAL.InsertPerson(person);
+
+                    dgvPersons.DataSource = personDAL.GetPersons();
+
+                    SetHeadersNames();
+
+                    if (success)
+                    {
+                        ClearControls();
+                        MessageBox.Show(
+                            "Pessoa adicionada com sucesso.",
+                            "Sucesso",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+                    }
+                    else
+                        MessageBox.Show(
+                            "Ocorreu algum erro, tente novamente.",
+                            "Atenção",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error  
+                        );
+                }
             }
-            else
-                MessageBox.Show("Ocorreu algum erro, tente novamente.");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            person.person_id = Convert.ToInt32(txtPersonId.Text);
-            person.name = txtName.Text;
-            person.address = txtAddress.Text;
-            person.number = Convert.ToDouble(txtNumber.Text);
-            Regex regexObj = new Regex(@"[^\d]");
-            person.telephone = Convert.ToDouble(regexObj.Replace(txtTelephone.Text, ""));
-            person.city = txtCity.Text;
-            person.state = txtState.Text;
-
-            var success = person.UpdatePerson(person);
-
-            dgvPersons.DataSource = person.GetPersons();
-
-            SetHeadersNames();
-
-            if (success)
+            if (String.IsNullOrWhiteSpace(txtPersonId.Text))
             {
-                ClearControls();
-                MessageBox.Show("Pessoa atualizada com sucesso.");
+                MessageBox.Show(
+                    "Você está tentando atualizar uma pessoa que não ainda não foi cadastrada.",
+                    "Atenção",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
             }
             else
-                MessageBox.Show("Ocorreu algum erro, tente novamente.");
+            {
+                if (verifyFields())
+                {
+                    MessageBox.Show(
+                        "Preencha os campos corretamente",
+                        "Atenção",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                }
+                else
+                {
+                    person.person_id = Convert.ToInt32(txtPersonId.Text);
+                    person.name = txtName.Text;
+                    person.address = txtAddress.Text;
+                    person.number = Convert.ToDouble(txtNumber.Text);
+                    Regex regexObj = new Regex(@"[^\d]");
+                    person.telephone = Convert.ToDouble(regexObj.Replace(txtTelephone.Text, ""));
+                    person.city = txtCity.Text;
+                    person.state = txtState.Text;
 
+                    var success = personDAL.UpdatePerson(person);
+
+                    dgvPersons.DataSource = personDAL.GetPersons();
+
+                    SetHeadersNames();
+
+                    if (success)
+                    {
+                        ClearControls();
+                        MessageBox.Show(
+                            "Pessoa atualizada com sucesso.",
+                            "Sucesso",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+                    }
+                    else
+                        MessageBox.Show(
+                            "Ocorreu algum erro, tente novamente.",
+                            "Atenção",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                }
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            person.person_id = Convert.ToInt32(txtPersonId.Text);
-
-            var success = person.DeletePerson(person);
-
-            dgvPersons.DataSource = person.GetPersons();
-
-            SetHeadersNames();
-
-            if (success)
+            if (String.IsNullOrWhiteSpace(txtPersonId.Text))
             {
-                ClearControls();
-                MessageBox.Show("Pessoa apagada com sucesso.");
+                MessageBox.Show(
+                    "Você está tentando apagar uma pessoa que ainda não foi cadastrada.",
+                    "Atenção",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            } else {
+                DialogResult dialogResult = MessageBox.Show(
+                    "Tem certeza que deseja excluir esse registro?",
+                    "Atenção",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    person.person_id = Convert.ToInt32(txtPersonId.Text);
+
+                    var success = personDAL.DeletePerson(person);
+
+                    dgvPersons.DataSource = personDAL.GetPersons();
+
+                    SetHeadersNames();
+
+                    if (success)
+                    {
+                        ClearControls();
+                        MessageBox.Show(
+                            "Pessoa apagada com sucesso.",
+                            "Sucesso",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+                    }
+                    else
+                        MessageBox.Show(
+                            "Ocorreu algum erro, tente novamente.",
+                            "Atenção",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                }
             }
-            else
-                MessageBox.Show("Ocorreu algum erro, tente novamente.");
+                       
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -106,7 +208,7 @@ namespace ProjetoUC10
 
         private void txtSearchName_TextChanged(object sender, EventArgs e)
         {
-            DataView dataView = new DataView(person.GetPersons());
+            DataView dataView = new DataView(personDAL.GetPersons());
 
             dataView.RowFilter = $"Name LIKE '{txtSearchName.Text}%'";
 
@@ -119,7 +221,7 @@ namespace ProjetoUC10
         {
             txtSearchName.Text = "";
 
-            dgvPersons.DataSource = person.GetPersons();
+            dgvPersons.DataSource = personDAL.GetPersons();
 
             SetHeadersNames();
         }
@@ -156,6 +258,21 @@ namespace ProjetoUC10
             txtTelephone.Text = dgvPersons.Rows[index].Cells[2].Value.ToString();
             txtCity.Text = dgvPersons.Rows[index].Cells[5].Value.ToString();
             txtState.Text = dgvPersons.Rows[index].Cells[6].Value.ToString();
+        }
+
+        private bool verifyFields()
+        {
+            return
+            (
+            String.IsNullOrWhiteSpace(txtName.Text) ||
+            String.IsNullOrWhiteSpace(txtAddress.Text) ||
+            String.IsNullOrWhiteSpace(txtNumber.Text) ||
+            String.IsNullOrWhiteSpace(txtTelephone.Text) ||
+            String.IsNullOrWhiteSpace(txtCity.Text) ||
+            String.IsNullOrWhiteSpace(txtState.Text)
+            )
+            ? true
+            : false;
         }
     }
 }
