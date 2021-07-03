@@ -4,8 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace ProjetoUC10
+namespace IMC
 {
     static class Program
     {
@@ -18,7 +17,7 @@ namespace ProjetoUC10
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPessoas());
+            Application.Run(new CalculoPesoIdeal());
         }
     }
 }
